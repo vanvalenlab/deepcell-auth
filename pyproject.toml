@@ -54,4 +54,7 @@ platforms = [
 attr = 'deepcell_auth.__version__'
 
 [tool.setuptools.package-data]
-deepcell_auth = ['tests/*.py']
+deepcell_auth = [
+    'asset_manifest.yaml',
+    'tests/*.py',
+]
