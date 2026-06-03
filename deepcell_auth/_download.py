@@ -6,6 +6,18 @@ __all__ = [
     "download_cellsam_evaluation_dataset",
 ]
 
+def download_cellsam_model(version=None):
+    """Download pre-trained weights for the CellSAM model.
+
+    Parameters
+    ----------
+    version : str, optional, default=latest
+       Which version of the model weights to download. If not specified, the latest
+       published version will be downloaded. Available versions:
+
+         - 1.2 (latest)
+         - 1.0
+    """
 
 def download_cellsam_evaluation_dataset(version=None):
     """Download the evaluation data for the CellSAM model.
