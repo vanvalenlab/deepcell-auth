@@ -39,7 +39,7 @@ def download_cellsam_evaluation_dataset(version=None):
     # Load manifest
     manifest_path = importlib.resources.files("deepcell_auth") / "asset_manifest.yaml"
     with open(manifest_path) as fh:
-        manifest = yaml.safe_load(fh.read())["models"]["cellsam"]
+        manifest = yaml.safe_load(fh.read())["datasets"]["cellsam"]
 
     version = "1.2" if version is None else version
     try:
