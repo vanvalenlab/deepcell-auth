@@ -8,6 +8,11 @@ datasets:
     "1.2":
       "asset_key": "data/cellsam/cellsam-data_v1.2.tar.gz"
       "asset_hash": "6549060734c16d08454e45d91c875fc8"
+  deepcell-types:
+    "1.1":
+      # NOTE: no hashing for deepcell-types dataset as computing the hash takes
+      # too long for it to be worth it
+      "asset_key": "data/deepcell-types/public_data_v1.1.zip"
 models:
   cellsam:
     "1.2":
