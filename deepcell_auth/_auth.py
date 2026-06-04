@@ -1,5 +1,6 @@
 """User interface to authentication layer for data/models."""
 
+import importlib
 import os
 import requests
 from pathlib import Path
@@ -7,11 +8,26 @@ from hashlib import md5
 from tqdm import tqdm
 import logging
 import tarfile
+import yaml
 import zipfile
 
 
 _api_endpoint = "https://users.deepcell.org/api/getData/"
 _asset_location = Path.home() / ".deepcell"
+
+
+def load_manifest():
+    """Load the full asset manifest from file.
+
+    Returns
+    -------
+    dict
+       Full manifest of deepcell assets in the form of a nested dict
+    """
+    manifest_path = importlib.resources.files("deepcell_auth") / "asset_manifest.yaml"
+    with open(manifest_path) as fh:
+        manifest = yaml.safe_load(fh.read())
+    return manifest
 
 
 def fetch_data(asset_key: str, cache_subdir=None, file_hash=None):
