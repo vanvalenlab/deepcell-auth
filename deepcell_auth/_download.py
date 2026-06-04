@@ -4,6 +4,7 @@ import yaml
 
 __all__ = [
     "download_cellsam_evaluation_dataset",
+    "download_cellsam_model",
 ]
 
 def download_cellsam_model(version=None):
@@ -18,6 +19,24 @@ def download_cellsam_model(version=None):
          - 1.2 (latest)
          - 1.0
     """
+    from ._auth import fetch_data
+
+    # Load manifest
+    manifest_path = importlib.resources.files("deepcell_auth") / "asset_manifest.yaml"
+    with open(manifest_path) as fh:
+        manifest = yaml.safe_load(fh.read())["models"]["cellsam"]
+
+    version = "1.2" if version is None else version
+    try:
+        record = manifest[version]
+    except KeyError:
+        raise KeyError(
+            f"Version {version} not found. Available versions: {list(manifest)}"
+        )
+
+    fetch_data(
+        record["asset_key"], cache_subdir="models", file_hash=record["asset_hash"]
+    )
 
 def download_cellsam_evaluation_dataset(version=None):
     """Download the evaluation data for the CellSAM model.

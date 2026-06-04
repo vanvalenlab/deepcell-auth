@@ -8,3 +8,8 @@ datasets:
     "1.2":
       "asset_key": "data/cellsam/cellsam-data_v1.2.tar.gz"
       "asset_hash": "6549060734c16d08454e45d91c875fc8"
+models:
+  cellsam:
+    "1.2":
+      "asset_key": "models/cellsam-models_v1.2.tar.gz"
+      "asset_hash": "f41e6899c49fc8ce12f77a8d25594604"
