@@ -13,3 +13,10 @@ models:
     "1.2":
       "asset_key": "models/cellsam-models_v1.2.tar.gz"
       "asset_hash": "f41e6899c49fc8ce12f77a8d25594604"
+  deepcell-types:
+    "2025-06-09":
+      "asset_key": "models/deepcell-types_2025-06-09.pt"
+      "asset_hash": "19b669675c06816414e8677f542ff542"
+    "2025-06-09_public-data-only":
+      "asset_key": "models/deepcell-types_2025-06-09_public-data-only.pt"
+      "asset_hash": "331841fe78d9a5afec6e58d0035c40ef"
