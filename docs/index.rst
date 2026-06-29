@@ -1,14 +1,24 @@
-.. deepcell-auth documentation master file, created by
-   sphinx-quickstart on Mon Jun 29 01:44:34 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+deepcell-auth
+=============
 
-deepcell-auth documentation
-===========================
+Python client for managing access to deepcell assets, such as model weights
+and datasets, via the `deepcell users portal <https://users.deepcell.org>`_.
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Licensing of Software, Data, and Model Weights
+----------------------------------------------
+
+The source code in this repository is available under the
+`Apache 2 Licence <https://opensource.org/license/apache-2.0>`_: see
+``LICENSE``.
+
+Datasets and pre-trained model weights provided across the deepcell ecosystem
+are subject to a modified Apache 2 license with restrictions for commercial
+use: see ``ASSET_LICENSE`` for details.
+
+Inqiuries regarding commercial licensing should be directed to the
+`Caltech Office of Technology Transfer <ottcp>`_.
+
+.. _ottcp: https://innovation.caltech.edu/about-ottcp/contact-us#send-us-a-message
 
 
 .. toctree::
