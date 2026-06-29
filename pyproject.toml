@@ -28,6 +28,12 @@ dependencies = [
     "tqdm",
 ]
 
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "numpydoc",
+]
+
 [[project.maintainers]]
 name = 'Van Valen Lab'
 email = 'vanvalenlab@gmail.com'
