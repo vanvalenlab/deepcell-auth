@@ -53,7 +53,7 @@ def download_deepcell_types_model(version=None):
     manifest = load_manifest()
     dct_models = manifest["models"]["deepcell-types"]
 
-    version = "2026-05-17" if version is None else version
+    version = "2026-06-23" if version is None else version
     try:
         record = dct_models[version]
     except KeyError:
