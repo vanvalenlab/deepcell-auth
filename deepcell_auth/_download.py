@@ -3,7 +3,37 @@ __all__ = [
     "download_cellsam_model",
     "download_deepcell_types_model",
     "download_deepcell_types_data",
+    "download_torch_mesmer_model",
 ]
+
+
+def download_torch_mesmer_model(version=None):
+    """Download pre-trained weights for the torch-mesmer segmentation model.
+
+    Parameters
+    ----------
+    version : str, optional, default=latest
+       Which version of the model weights to download. If not specified, the latest
+       published version will be downloaded. Available versions:
+
+         - 2026-06-30 (latest)
+    """
+    from ._auth import load_manifest, fetch_data
+
+    manifest = load_manifest()
+    tm_models = manifest["models"]["torch-mesmer"]
+
+    version = "2026-06-30" if version is None else version
+    try:
+        record = tm_models[version]
+    except KeyError:
+        raise KeyError(
+            f"Version {version} not found. Available versions: {list(tm_models)}"
+        )
+
+    fetch_data(
+        record["asset_key"], cache_subdir="models", file_hash=record["asset_hash"]
+    )
 
 
 def download_cellsam_model(version=None):
