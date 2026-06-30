@@ -19,6 +19,9 @@ models:
       "asset_key": "models/cellsam-models_v1.2.tar.gz"
       "asset_hash": "f41e6899c49fc8ce12f77a8d25594604"
   deepcell-types:
+    "2026-06-23":
+      "asset_key": "models/deepcell-types_2026-06-23.pt"
+      "asset_hash": "067f558bfee7c9b1fc750b8008a154ab"
     "2025-06-09":
       "asset_key": "models/deepcell-types_2025-06-09.pt"
       "asset_hash": "19b669675c06816414e8677f542ff542"
