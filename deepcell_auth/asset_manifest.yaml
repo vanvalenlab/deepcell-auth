@@ -25,3 +25,7 @@ models:
     "2025-06-09_public-data-only":
       "asset_key": "models/deepcell-types_2025-06-09_public-data-only.pt"
       "asset_hash": "331841fe78d9a5afec6e58d0035c40ef"
+  torch-mesmer:
+    "2026-06-30":
+      "asset_key": "models/torch-mesmer_2026-06-30.pth"
+      "asset_hash": "e150dafce8d746449e19ab473a3d08dd"
