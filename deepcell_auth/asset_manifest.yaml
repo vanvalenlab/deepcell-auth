@@ -44,3 +44,7 @@ models:
         "asset_hash": "9e51cf1af8c6c43b00871a821fde0f57"
       - "asset_key": "models/deepcell-types_baseline-xgboost.remap.json"
         "asset_hash": "fba1b0e705e5f7747eb2f9cae30815ba"
+  torch-mesmer:
+    "2026-06-30":
+      "asset_key": "models/torch-mesmer_2026-06-30.pth"
+      "asset_hash": "e150dafce8d746449e19ab473a3d08dd"
