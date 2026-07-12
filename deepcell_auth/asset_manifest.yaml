@@ -19,12 +19,28 @@ models:
       "asset_key": "models/cellsam-models_v1.2.tar.gz"
       "asset_hash": "f41e6899c49fc8ce12f77a8d25594604"
   deepcell-types:
+    "2026-06-15":
+      "asset_key": "models/deepcell-types_2026-06-15_resmlp.pt"
+      "asset_hash": "b819a7e0b177ad5330394eab3c6c7ad8"
     "2026-06-23":
-      "asset_key": "models/deepcell-types_2026-06-23.pt"
-      "asset_hash": "067f558bfee7c9b1fc750b8008a154ab"
-    "2025-06-09":
-      "asset_key": "models/deepcell-types_2025-06-09.pt"
-      "asset_hash": "19b669675c06816414e8677f542ff542"
-    "2025-06-09_public-data-only":
-      "asset_key": "models/deepcell-types_2025-06-09_public-data-only.pt"
-      "asset_hash": "331841fe78d9a5afec6e58d0035c40ef"
+      "asset_key": "models/deepcell-types_2026-06-23_resmlp_ptft.pt"
+      "asset_hash": "402e94c103c5e489a57433cd107009d3"
+  # Comparison-baseline checkpoints for deepcell-types. Each baseline maps to a
+  # LIST of assets because some ship companion files (maps -> _stats.npz;
+  # xgboost -> .remap.json). Nimbus is intentionally absent: its pretrained
+  # weights are distributed upstream (angelolab/Nimbus-Inference) and are not
+  # re-hosted here.
+  deepcell-types-baselines:
+    "cellsighter":
+      - "asset_key": "models/deepcell-types_baseline-cellsighter.pth"
+        "asset_hash": "c5a105fb044ad82c82817a32aabbae7c"
+    "maps":
+      - "asset_key": "models/deepcell-types_baseline-maps.pth"
+        "asset_hash": "1ad5e30ceaccfdb91050b663099258fb"
+      - "asset_key": "models/deepcell-types_baseline-maps_stats.npz"
+        "asset_hash": "1f462d0c8bf531af73026d415d52728d"
+    "xgboost":
+      - "asset_key": "models/deepcell-types_baseline-xgboost.json"
+        "asset_hash": "9e51cf1af8c6c43b00871a821fde0f57"
+      - "asset_key": "models/deepcell-types_baseline-xgboost.remap.json"
+        "asset_hash": "fba1b0e705e5f7747eb2f9cae30815ba"
