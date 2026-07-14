@@ -22,7 +22,7 @@ models:
     "2026-06-15":
       "asset_key": "models/deepcell-types_2026-06-15_resmlp.pt"
       "asset_hash": "b819a7e0b177ad5330394eab3c6c7ad8"
-    "2026-06-23":
+    "2026-06-23-ptft":
       "asset_key": "models/deepcell-types_2026-06-23_resmlp_ptft.pt"
       "asset_hash": "402e94c103c5e489a57433cd107009d3"
     # Legacy CLIP checkpoints. Incompatible with current deepcell-types code;

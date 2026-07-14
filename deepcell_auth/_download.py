@@ -76,7 +76,7 @@ def download_deepcell_types_model(version=None):
        published version will be downloaded. Available versions:
 
          - '2026-06-15'  (latest)
-         - '2026-06-23'
+         - '2026-06-23-ptft'
          - '2025-06-09'  (legacy; use with matching historical commit)
          - '2025-06-09_public-data-only'  (legacy)
     """
