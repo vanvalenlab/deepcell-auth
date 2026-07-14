@@ -77,6 +77,8 @@ def download_deepcell_types_model(version=None):
 
          - '2026-06-15'  (latest)
          - '2026-06-23'
+         - '2025-06-09'  (legacy; use with matching historical commit)
+         - '2025-06-09_public-data-only'  (legacy)
     """
     from ._auth import load_manifest, fetch_data
 
