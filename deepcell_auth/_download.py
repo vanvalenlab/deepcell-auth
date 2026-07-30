@@ -79,6 +79,11 @@ def download_deepcell_types_model(version=None):
          - '2026-06-23-ptft'
          - '2025-06-09'  (legacy; use with matching historical commit)
          - '2025-06-09_public-data-only'  (legacy)
+
+    Returns
+    -------
+    pathlib.Path
+        Local path to the downloaded checkpoint.
     """
     from ._auth import load_manifest, fetch_data
 
@@ -93,7 +98,7 @@ def download_deepcell_types_model(version=None):
             f"Version {version} not found. Available versions: {list(dct_models)}"
         )
 
-    fetch_data(
+    return fetch_data(
         record["asset_key"], cache_subdir="models", file_hash=record["asset_hash"]
     )
 
@@ -150,6 +155,11 @@ def download_deepcell_types_data(version=None):
        published version will be downloaded. Available versions:
 
          - 1.1 (latest)
+
+    Returns
+    -------
+    pathlib.Path
+        Local path to the downloaded archive.
     """
     from ._auth import load_manifest, fetch_data
 
@@ -164,7 +174,7 @@ def download_deepcell_types_data(version=None):
             f"Version {version} not found. Available versions: {list(dct_datasets)}"
         )
 
-    fetch_data(record["asset_key"], cache_subdir="data")
+    return fetch_data(record["asset_key"], cache_subdir="data")
 
 def download_cellsam_evaluation_dataset(version=None):
     """Download the evaluation data for the CellSAM model.
