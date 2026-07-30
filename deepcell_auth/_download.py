@@ -74,15 +74,17 @@ def download_deepcell_types_model(version=None):
        Which version of the model weights to download. If not specified, the latest
        published version will be downloaded. Available versions:
 
-         - '2025-06-09' (latest)
-         - '2025-06-09_public-data-only'
+         - '2026-06-15'  (latest)
+         - '2026-06-23-ptft'
+         - '2025-06-09'  (legacy; use with matching historical commit)
+         - '2025-06-09_public-data-only'  (legacy)
     """
     from ._auth import load_manifest, fetch_data
 
     manifest = load_manifest()
     dct_models = manifest["models"]["deepcell-types"]
 
-    version = "2025-06-09" if version is None else version
+    version = "2026-06-15" if version is None else version
     try:
         record = dct_models[version]
     except KeyError:

@@ -19,6 +19,14 @@ models:
       "asset_key": "models/cellsam-models_v1.2.tar.gz"
       "asset_hash": "f41e6899c49fc8ce12f77a8d25594604"
   deepcell-types:
+    "2026-06-15":
+      "asset_key": "models/deepcell-types_2026-06-15_resmlp.pt"
+      "asset_hash": "b819a7e0b177ad5330394eab3c6c7ad8"
+    "2026-06-23-ptft":
+      "asset_key": "models/deepcell-types_2026-06-23_resmlp_ptft.pt"
+      "asset_hash": "402e94c103c5e489a57433cd107009d3"
+    # Legacy CLIP checkpoints. Incompatible with current deepcell-types code;
+    # retained for reproducibility (use with the matching historical commit).
     "2025-06-09":
       "asset_key": "models/deepcell-types_2025-06-09.pt"
       "asset_hash": "19b669675c06816414e8677f542ff542"
