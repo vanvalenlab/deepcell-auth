@@ -33,25 +33,25 @@ models:
     "2025-06-09_public-data-only":
       "asset_key": "models/deepcell-types_2025-06-09_public-data-only.pt"
       "asset_hash": "331841fe78d9a5afec6e58d0035c40ef"
-  # Comparison-baseline checkpoints for deepcell-types. Each baseline maps to a
-  # LIST of assets because some ship companion files (maps -> _stats.npz;
-  # xgboost -> .remap.json). Nimbus is intentionally absent: its pretrained
-  # weights are distributed upstream (angelolab/Nimbus-Inference) and are not
-  # re-hosted here.
+  # Comparison-baseline checkpoints for deepcell-types, as one .tar.gz bundle
+  # per baseline (the cellsam layout: a single version-scoped top-level
+  # directory). maps and xgboost each ship a companion file alongside their
+  # weights, and bundling also cuts the xgboost booster from 1.1 GB to 384 MB.
+  # The value stays a LIST so a baseline can gain a second standalone asset
+  # without a schema change; today every list has exactly one entry.
+  #
+  # Nimbus is intentionally absent: its pretrained weights are distributed
+  # upstream (angelolab/Nimbus-Inference) and are not re-hosted here.
   deepcell-types-baselines:
     "cellsighter":
-      - "asset_key": "models/deepcell-types_baseline-cellsighter.pth"
-        "asset_hash": "c5a105fb044ad82c82817a32aabbae7c"
+      - "asset_key": "models/deepcell-types_baseline-cellsighter_2026-06-30.tar.gz"
+        "asset_hash": "74cf4a64703e341230c2ae4c4da4f5ec"
     "maps":
-      - "asset_key": "models/deepcell-types_baseline-maps.pth"
-        "asset_hash": "1ad5e30ceaccfdb91050b663099258fb"
-      - "asset_key": "models/deepcell-types_baseline-maps_stats.npz"
-        "asset_hash": "1f462d0c8bf531af73026d415d52728d"
+      - "asset_key": "models/deepcell-types_baseline-maps_2026-06-30.tar.gz"
+        "asset_hash": "f5f0ae6d3956f29f83c65faff7271c97"
     "xgboost":
-      - "asset_key": "models/deepcell-types_baseline-xgboost.json"
-        "asset_hash": "9e51cf1af8c6c43b00871a821fde0f57"
-      - "asset_key": "models/deepcell-types_baseline-xgboost.remap.json"
-        "asset_hash": "fba1b0e705e5f7747eb2f9cae30815ba"
+      - "asset_key": "models/deepcell-types_baseline-xgboost_2026-06-30.tar.gz"
+        "asset_hash": "b560aee03a85e8a5f675c4adc6d663dc"
   torch-mesmer:
     "2026-06-30":
       "asset_key": "models/torch-mesmer_2026-06-30.pth"
