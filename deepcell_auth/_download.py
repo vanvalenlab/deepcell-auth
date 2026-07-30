@@ -2,6 +2,7 @@ __all__ = [
     "download_cellsam_evaluation_dataset",
     "download_cellsam_model",
     "download_deepcell_types_model",
+    "download_deepcell_types_baseline",
     "download_deepcell_types_data",
     "download_torch_mesmer_model",
 ]
@@ -74,15 +75,17 @@ def download_deepcell_types_model(version=None):
        Which version of the model weights to download. If not specified, the latest
        published version will be downloaded. Available versions:
 
-         - '2025-06-09' (latest)
-         - '2025-06-09_public-data-only'
+         - '2026-06-15'  (latest)
+         - '2026-06-23-ptft'
+         - '2025-06-09'  (legacy; use with matching historical commit)
+         - '2025-06-09_public-data-only'  (legacy)
     """
     from ._auth import load_manifest, fetch_data
 
     manifest = load_manifest()
     dct_models = manifest["models"]["deepcell-types"]
 
-    version = "2025-06-09" if version is None else version
+    version = "2026-06-15" if version is None else version
     try:
         record = dct_models[version]
     except KeyError:
@@ -93,6 +96,45 @@ def download_deepcell_types_model(version=None):
     fetch_data(
         record["asset_key"], cache_subdir="models", file_hash=record["asset_hash"]
     )
+
+
+def download_deepcell_types_baseline(name):
+    """Download a deepcell-types comparison-baseline checkpoint.
+
+    Parameters
+    ----------
+    name : str
+        Baseline identifier. One of 'cellsighter', 'maps', or 'xgboost'.
+        Some baselines ship companion files (maps -> _stats.npz;
+        xgboost -> .remap.json), so a list of local paths is returned.
+
+        'nimbus' is intentionally not served here: its pretrained weights are
+        distributed upstream (angelolab/Nimbus-Inference) and are not
+        re-hosted by this project.
+
+    Returns
+    -------
+    list
+        Local paths to every file downloaded for this baseline.
+    """
+    from ._auth import load_manifest, fetch_data
+
+    manifest = load_manifest()
+    baselines = manifest["models"]["deepcell-types-baselines"]
+
+    try:
+        records = baselines[name]
+    except KeyError:
+        raise KeyError(
+            f"Baseline {name} not found. Available baselines: {list(baselines)}"
+        )
+
+    return [
+        fetch_data(
+            record["asset_key"], cache_subdir="models", file_hash=record["asset_hash"]
+        )
+        for record in records
+    ]
 
 
 def download_deepcell_types_data(version=None):
