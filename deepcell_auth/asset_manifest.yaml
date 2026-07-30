@@ -33,6 +33,37 @@ models:
     "2025-06-09_public-data-only":
       "asset_key": "models/deepcell-types_2025-06-09_public-data-only.pt"
       "asset_hash": "331841fe78d9a5afec6e58d0035c40ef"
+  # Comparison-baseline checkpoints for deepcell-types. All three ship as a
+  # SINGLE .tar.gz (the cellsam layout: one version-scoped top-level directory)
+  # with a subdirectory per baseline:
+  #
+  #   deepcell-types_baselines_2026-06-30/
+  #     cellsighter/deepcell-types_baseline-cellsighter.pth
+  #     maps/deepcell-types_baseline-maps.pth
+  #     maps/deepcell-types_baseline-maps_stats.npz
+  #     xgboost/deepcell-types_baseline-xgboost.json
+  #     xgboost/deepcell-types_baseline-xgboost.remap.json
+  #
+  # Every baseline name therefore maps to the same asset. Requesting one
+  # downloads all three (646 MB); the other two are then served from the cache
+  # without a second transfer. deepcell-types unpacks the archive and returns
+  # only the requested baseline's subdirectory.
+  #
+  # The value stays a LIST so a baseline can gain a standalone asset without a
+  # schema change; today every list has exactly one entry.
+  #
+  # Nimbus is intentionally absent: its pretrained weights are distributed
+  # upstream (angelolab/Nimbus-Inference) and are not re-hosted here.
+  deepcell-types-baselines:
+    "cellsighter":
+      - "asset_key": "models/deepcell-types_baselines_2026-06-30.tar.gz"
+        "asset_hash": "910840c7caf10fea2c60b66061074471"
+    "maps":
+      - "asset_key": "models/deepcell-types_baselines_2026-06-30.tar.gz"
+        "asset_hash": "910840c7caf10fea2c60b66061074471"
+    "xgboost":
+      - "asset_key": "models/deepcell-types_baselines_2026-06-30.tar.gz"
+        "asset_hash": "910840c7caf10fea2c60b66061074471"
   torch-mesmer:
     "2026-06-30":
       "asset_key": "models/torch-mesmer_2026-06-30.pth"
