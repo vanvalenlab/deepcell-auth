@@ -68,3 +68,11 @@ models:
     "2026-06-30":
       "asset_key": "models/torch-mesmer_2026-06-30.pth"
       "asset_hash": "e150dafce8d746449e19ab473a3d08dd"
+  torch-spots:
+    "2026-07-29":
+      "asset_key": "models/torch-spots_2026-07-29.pth"
+      "asset_hash": "506e921f95c6d88ce7b2db077eafecd0"
+  torch-tracking:
+    "2026-07-30":
+      "asset_key": "models/torch-tracking_2026-07-30.pt"
+      "asset_hash": "c5f4a1b21202d32a2017ce147deddb8f"
