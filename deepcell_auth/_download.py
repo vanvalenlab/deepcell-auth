@@ -81,7 +81,7 @@ def download_torch_tracking_model(version=None):
     from ._auth import load_manifest, fetch_data
 
     manifest = load_manifest()
-    tm_models = manifest["models"]["torch-spots"]
+    tm_models = manifest["models"]["torch-tracking"]
 
     version = "2026-07-30" if version is None else version
     try:
