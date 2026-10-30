@@ -17,9 +17,9 @@ Licensing of Datasets and Pre-trained Model Weights
 
 Datasets and pre-trained model weights provided across the deepcell ecosystem
 are subject to a modified Apache 2 license with restrictions for commercial
-use: see ``ASSET_LICENSE`` for details.
+use: see ASSET_LICENSE_ for details.
 
 Inqiuries regarding commercial licensing should be directed to the
-`Caltech Office of Technology Transfer <ottcp>`_.
+`Caltech Office of Technology Transfer <https://innovation.caltech.edu/about-ottcp/contact-us#send-us-a-message>`_
 
-.. _ottcp: https://innovation.caltech.edu/about-ottcp/contact-us#send-us-a-message
+.. _ASSET_LICENSE: https://github.com/vanvalenlab/deepcell-auth/blob/main/ASSET_LICENSE
