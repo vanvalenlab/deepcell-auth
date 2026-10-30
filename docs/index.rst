@@ -1,15 +1,18 @@
-deepcell-auth
-=============
+DeepCell Assets
+===============
 
-Python client for managing access to deepcell assets, such as model weights
-and datasets, via the `deepcell users portal <https://users.deepcell.org>`_.
+.. attention::
+   **Deepcell models are now hosted on huggingface**
 
-Licensing of Software, Data, and Model Weights
-----------------------------------------------
+   Visit https://huggingface.co/vanvalenlab
 
-The source code in this repository is available under the
-`Apache 2 Licence <https://opensource.org/license/apache-2.0>`_: see
-``LICENSE``.
+.. deprecated:: 10-2026
+
+   The users.deepcell.org access portal has been removed in favor of
+   huggingface for hosting all deepcell models
+
+Licensing of Data and Pre-trained Model Weights
+-----------------------------------------------
 
 Datasets and pre-trained model weights provided across the deepcell ecosystem
 are subject to a modified Apache 2 license with restrictions for commercial
@@ -19,9 +22,3 @@ Inqiuries regarding commercial licensing should be directed to the
 `Caltech Office of Technology Transfer <ottcp>`_.
 
 .. _ottcp: https://innovation.caltech.edu/about-ottcp/contact-us#send-us-a-message
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
