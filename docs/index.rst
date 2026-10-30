@@ -1,18 +1,19 @@
-DeepCell Assets
-===============
+deepcell-auth
+=============
+
+.. deprecated:: 10-2026
+
+   The https://users.deepcell.org access portal has been removed.
+   huggingface is now used for hosting all deepcell models.
 
 .. attention::
    **Deepcell models are now hosted on huggingface**
 
    Visit https://huggingface.co/vanvalenlab
 
-.. deprecated:: 10-2026
 
-   The users.deepcell.org access portal has been removed in favor of
-   huggingface for hosting all deepcell models
-
-Licensing of Data and Pre-trained Model Weights
------------------------------------------------
+Licensing of Datasets and Pre-trained Model Weights
+---------------------------------------------------
 
 Datasets and pre-trained model weights provided across the deepcell ecosystem
 are subject to a modified Apache 2 license with restrictions for commercial
